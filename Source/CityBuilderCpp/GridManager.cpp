@@ -73,6 +73,20 @@ bool AGridManager::RemoveBuilding(FIntPoint Cell)
     Building->Destroy();
     return true;
 }
+
+void AGridManager::GetAllBuildings(TArray<ABuilding*>& OutBuildings) const
+{
+    OutBuildings.Reset();
+    for (const TPair<FIntPoint, TObjectPtr<ABuilding>>& Pair : Buildings)
+    {
+        if (Pair.Value)
+        {
+            OutBuildings.Add(Pair.Value);
+        }
+    }
+}
+
+
 void AGridManager::OnConstruction(const FTransform& Transform)
 {
     Super::OnConstruction(Transform);

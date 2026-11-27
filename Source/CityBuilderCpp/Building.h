@@ -15,6 +15,11 @@ public:
 	virtual void Init(UBuildingData* InData, FIntPoint InCell, AGridManager* InGrid);
 	UBuildingData* GetData() const { return Data; }
 	FIntPoint GetCell() const { return Cell; }
+	// --- Ce que le bâtiment apporte à la ville. Les enfants les redéfinissent. ---
+	// L'argent gagné à chaque tour d'économie.
+	virtual int32 GetIncome() const;
+	// L'argent dépensé à chaque tour d'économie.
+	virtual int32 GetUpkeep() const;
 	// Un event que le Blueprint enfant peut remplir (une animation, un son...).
 	UFUNCTION(BlueprintImplementableEvent, Category = "Building")
 	void OnBuilt();

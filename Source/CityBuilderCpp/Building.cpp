@@ -18,6 +18,17 @@ void ABuilding::Init(UBuildingData* InData, FIntPoint InCell, AGridManager* InGr
 	ApplyMesh();
 	OnBuilt();
 }
+
+int32 ABuilding::GetIncome() const
+{
+	// Le bâtiment rapporte ce que dit sa fiche.
+	return Data ? Data->Income : 0;
+}
+int32 ABuilding::GetUpkeep() const
+{
+	return Data ? Data->Upkeep : 0;
+}
+
 void ABuilding::ApplyMesh()
 {
 	if (Data == nullptr || Data->Mesh == nullptr)

@@ -35,7 +35,10 @@ public:
 	// Fait apparaître le bâtiment de cette fiche sur la case. Ne vérifie pas l'argent.
 	ABuilding* PlaceBuilding(UBuildingData* Data, FIntPoint Cell, float Yaw);
 	// Détruit le bâtiment posé sur la case. Renvoie vrai s'il y en avait un.
-	bool RemoveBuilding(FIntPoint Cell);
+	bool RemoveBuilding(FIntPoint Cell);	
+	// Tous les bâtiments posés.
+    void GetAllBuildings(TArray<ABuilding*>& OutBuildings) const;
+        
 protected:
 	virtual void OnConstruction(const FTransform& Transform) override;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Grid")

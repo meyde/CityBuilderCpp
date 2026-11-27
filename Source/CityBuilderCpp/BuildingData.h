@@ -30,4 +30,10 @@ public:
 	// Ce que coûte le bâtiment à la construction.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Economy")
 	int32 Cost = 100;
+	// Ce qu'il rapporte à chaque tour d'économie (s'il est relié à une route).
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Economy")
+    int32 Income = 0;
+    // Ce qu'il coûte à chaque tour d'économie, relié ou non.
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Economy")
+    int32 Upkeep = 0;
 };
